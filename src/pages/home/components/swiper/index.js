@@ -15,17 +15,18 @@ export default class extends React.PureComponent {
     return (
       <WingBlank>
         <Carousel
+
           autoplay={true}
           infinite
           autoplayInterval={5000}
-          dotStyle={{ width: '0.16rem', height: '0.16rem',marginBottom: '0.16rem' }}
-          dotActiveStyle={{ width: '0.16rem', height: '0.16rem', marginBottom: '0.16rem' }}
+          dotStyle={{ width: '0.36rem', borderRadius:'0.16rem', height: '0.08rem',marginBottom: '0.16rem' }}
+          dotActiveStyle={{ width: '0.36rem', backgroundColor:'#297cd5', borderRadius:'0.16rem',height: '0.08rem', marginBottom: '0.16rem' }}
         >
           {this.state.data.map(item => (
             <a
               key={item.img}
               href={item.to}
-              style={{ display: 'inline-block', width: '10rem', height: '3.2rem' }}
+              style={{ display: 'inline-block', width: '100%', height: '4.3rem' }}
             >
               <img
                 src={item.img}
