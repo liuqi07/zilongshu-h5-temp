@@ -1,0 +1,131 @@
+.orderItem{
+    background: #ffffff;
+    margin-bottom: .133333rem;
+    font-size: .4rem;
+    p{
+        margin: 0;
+    }
+    strong{
+        font-weight: normal;
+    }
+    .orderTop{
+        display: flex;
+        justify-content: space-between;
+        padding: .266667rem .4rem;
+        border-bottom: 1px solid #E6E6E6;
+        .daifu{
+            color: #E84342;
+        }
+        .yifu{
+            color: #333333;
+        }
+        .yitui{
+            color: #FAB400;
+        }
+    }
+    .orderMain{
+        display: flex;
+        justify-content: space-between;
+        padding: .4rem;
+        border-bottom: 1px solid #E6E6E6;
+        align-items: center;
+        .left{
+            >div{
+                display: flex;
+                font-size: .373333rem;
+                .classInfo{
+                    line-height: .533333rem;
+                }
+            }
+            .img{
+                width: 1.6rem;
+                height: 1.12rem;
+                background: #EFEFEF;
+                margin-right: .4rem;
+                background-size: contain;
+                background-color: #EFEFEF;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+            p{
+                margin-top: .266667rem;
+                padding-left: 2rem;
+            }
+        }
+        .right{
+            line-height: .533333rem;
+            text-align: right;
+            .midline{
+                color: #999999;
+                text-decoration: line-through;
+            }
+            .normal{
+                padding-left: .28rem;
+            }
+            span{
+                color: #999999;
+            }
+        }
+    }
+    .orderBottom{
+        display: flex;
+        padding: .293333rem .4rem;
+        flex-direction: row-reverse;
+        text-align: right;
+        .smBtn{
+            width: 2.4rem;
+            height: 0.88rem;
+            line-height: 0.88rem;
+            text-align: center;
+            margin-top: 0.6rem;
+            border-radius: 0.44rem;
+            // margin-top: 125px;
+            // padding:10px 40px;
+            // height: 80px;
+            background: #297CD5;
+            // border-radius: 20rem;
+            border: none;
+            outline: none;
+            color: #fff;
+        }
+    }
+    .orderDetail{
+        .orderMoney{
+            border-bottom: 1px solid #E6E6E6;
+            .prefer{
+                display: flex;
+                justify-content: space-between;
+                padding: .293333rem .4rem 0;
+                .allHour{color: #999999;}
+            }
+            .payMoney{
+                display: flex;
+                justify-content: space-between;
+                padding: .293333rem .4rem;
+                strong{
+                    color: #E84342;
+                }
+            }
+        }
+        .orderInfo{
+            padding: .293333rem .4rem;
+            strong{
+                font-weight: bold;
+            }
+            p{
+                line-height: .693333rem;
+            }
+        }
+    }
+}
+.nodata{
+    padding-top: 2rem;
+    text-align: center;
+    background: #FCFCFC;
+    img{
+        width: 3.706667rem;
+    }
+    .notice{
+        font-size: .4rem;
+    }
+}

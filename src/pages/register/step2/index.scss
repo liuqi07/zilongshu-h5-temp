@@ -1,0 +1,24 @@
+.register-step2{
+    font-size: .4rem;
+    .form{
+        text-align: center;
+        padding: 0 .866667rem;
+        .register-msg{
+            color: #333333;
+            margin: .306667rem 0 .693333rem 0;
+        }
+        .bigmsg{
+            margin: 0.4rem;
+        }
+        .notice{
+            margin-top: .533333rem;
+            color: #999999;
+        }
+        .bigbtn{
+            margin-top: 0rem;
+        }
+        .disabled{
+            background: #C7C7C7;
+        }
+    }
+}

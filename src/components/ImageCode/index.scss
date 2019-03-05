@@ -1,0 +1,39 @@
+.image-code{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: .226667rem;
+    margin-top: .8rem;
+    .left{
+        flex: 1;
+        position: relative;
+        .sminput{
+            width: 100%;
+            border: none;
+            outline: none;
+            color: #333333;
+            font-size: .453333rem
+        }
+        .errmsg{
+            position: absolute;
+            right: 0;
+            margin: 0.1rem 0;
+        }
+    }
+    .right{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 2.48rem;
+        margin-left: .48rem;
+        img{
+            width: 2.48rem;
+            border-radius: .053333rem;
+            outline: none;
+            color: #FFF;
+            font-size: .346667rem;
+        }
+    }
+}

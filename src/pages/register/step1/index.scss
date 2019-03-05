@@ -1,0 +1,25 @@
+.register-step1{
+    font-size: .4rem;
+    .form{
+        text-align: center;
+        padding-top: .733333rem;
+        .phoneNum{
+            padding: .266667rem 0;
+            text-align: center;
+            margin: 0 9%;
+            width: 82%;
+            border: none;
+            border-bottom: 1px solid #e6e6e6;
+            outline: none;
+            color: #333333;
+            font-size: .453333rem
+        }
+        .errmsg{
+            margin: 0.4rem;
+        }
+        .notice{
+            margin-top: .533333rem;
+            color: #999999;
+        }
+    }
+}

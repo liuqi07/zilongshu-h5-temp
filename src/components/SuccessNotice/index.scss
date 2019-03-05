@@ -1,0 +1,25 @@
+.success-notice{
+    background: url(./images/success.png);
+    width: 6.186667rem;
+    height: 7.266667rem;
+    background-size: 100%;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin:-3.626667rem -3.093333rem ;
+    h1{
+        color: #333333;
+        font-size: .453333rem;
+        margin-top: 3.866667rem;
+    }
+    a{
+        display: inline-block;
+        width: 3.493333rem;
+        height: .8rem;
+        line-height: .7rem;
+        border: 1px solid #297CD5;
+        border-radius: .466667rem;
+        margin-top: 1rem;
+    }
+}

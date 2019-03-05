@@ -1,0 +1,46 @@
+.send-message{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: .226667rem;
+    margin-top: .8rem;
+    .left{
+        flex: 1;
+        position: relative;
+        .sminput{
+            width: 100%;
+            border: none;
+            outline: none;
+            color: #333333;
+            font-size: .453333rem
+        }
+        .errmsg{
+            position: absolute;
+            right: 0;
+            margin: 0.1rem 0;
+        }
+    }
+    .right{
+        // width: 2.48rem;
+    }
+    button{
+        width: 2.2rem;
+        background: #297CD5;
+        border: 1px solid #297CD5;
+        border-radius: .053333rem;
+        outline: none;
+        color: #FFF;
+        font-size: .346667rem;
+        padding: .12rem;
+        margin-left: .48rem;
+    }
+    button:disabled{
+        background: #fff;
+        color: #297CD5;
+    }
+    .disabled{
+        background: #C7C7C7;
+    }
+}

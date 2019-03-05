@@ -1,0 +1,22 @@
+.biginput-container{
+    position: relative;
+    input{
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #e6e6e6;
+        outline: none;
+        color: #333333;
+        font-size: .453333rem;
+        padding: .266667rem 0;
+        margin-top: .8rem;
+    }
+    .errmsg{
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        padding: .266667rem 0;
+        margin-top: .8rem;
+        line-height: 0.6rem;
+    }
+}

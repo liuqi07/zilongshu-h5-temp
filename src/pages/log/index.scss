@@ -1,0 +1,28 @@
+.log-container {
+  .px_test {
+    padding: 20px 0;
+  }
+  .line {
+    font-size: 0.4rem;
+    line-height: 0.6rem;
+    padding: 0 0 0 0.5333rem;
+  }
+  .px_1 {
+    border-bottom: 1px solid #333;
+  }
+  .px_05 {
+    border-bottom: 0.5px solid #333;
+  }
+  .PX_1 {
+    border-bottom: 1PX solid #333;
+  }
+  .PX_05 {
+    border-bottom: 0.5PX solid #333;
+  }
+  .rem_1 {
+    border-bottom: 0.0133rem solid #333;
+  }
+  .rem_05 {
+    border-bottom: 0.0067rem solid #333;
+  }
+}

@@ -1,0 +1,19 @@
+.pwd-container{
+    background: #FFFFFF;
+    .form{
+        font-size: .4rem;
+         padding: 0  0.4rem;
+         text-align: center;
+         .bigmsg{
+            margin: 0.4rem;
+         }
+         .text-center{text-align: center;margin-top: 0rem;}
+         .flex-between{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-between;
+            margin: .56rem 0 .773333rem;
+         }
+    }
+}

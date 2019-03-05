@@ -1,0 +1,37 @@
+.tab-container {
+  height: 1.3333rem;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .tab-item {
+    width: 22%;
+    height: 1.333rem;
+    line-height: 1.333rem;
+    display: block;
+    text-align: center;
+    font-size: 0.4rem;
+    color: #333;
+    position: relative;
+    // &:first-child {
+    //   width: 34%;
+    // }
+    &.all {
+      width: 34%;
+    }
+    &.active {
+      color: #297CD5;
+      &::after {
+        content: '';
+        display: block;
+        width: 0.8rem;
+        height: 0.04rem;
+        background: #297CD5;
+        position: absolute;
+        left: 50%;
+        bottom: 0.2133rem;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

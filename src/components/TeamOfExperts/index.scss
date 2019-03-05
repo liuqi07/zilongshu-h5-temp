@@ -1,0 +1,96 @@
+.team-of-experts-comp {
+  width: 10rem;
+  height: 8rem;
+  padding-top: 0.5333rem;
+  overflow: hidden;
+  .item-page {
+    width: 100%;
+    height: 5.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0.5333rem;
+    box-shadow:0 0.0267rem 0.1867rem 0 rgba(118,118,118,0.34);
+    border-radius: 0.1333rem;
+    .img {
+      width: 100%;
+      height: 3.0133rem;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 0.1333rem 0.1333rem 0 0;
+      }
+    }
+    .name {
+      font-size: 0.4533rem;
+      color: #333;
+      line-height: 0.64rem;
+      margin-top: 0.1733rem;
+    }
+    .country {
+      display: none;
+      font-size: 0.32rem;
+      color: #999;
+      line-height: 0.4rem;
+      &::after {
+        content: '——';
+        display: block;
+        color: #297CD5;
+        text-align: center;
+      }
+    }
+    .desc {
+      padding: 0 0.3333rem;
+      font-size: 0.3467rem;
+      line-height: 0.5067rem;
+      color: #333;
+      margin-top: 0.2133rem;
+    }
+  }
+  .item-page-active {
+    width: 100%;
+    height: 6.5733rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow:0 0.0267rem 0.1867rem 0 rgba(118,118,118,0.34);
+    border-radius: 0.1333rem;
+    overflow: hidden;
+    .img {
+      width: 100%;
+      height: 3.5333rem;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 0.1333rem 0.1333rem 0 0;
+      }
+    }
+    .name {
+      font-size: 0.4533rem;
+      color: #333;
+      line-height: 0.64rem;
+      margin-top: 0.1733rem;
+    }
+    .country {
+      font-size: 0.32rem;
+      color: #999;
+      line-height: 0.4rem;
+      &::after {
+        content: '——';
+        display: block;
+        color: #297CD5;
+        font-weight: 800;
+        text-align: center;
+      }
+    }
+    .desc {
+      padding: 0 0.3333rem;
+      font-size: 0.3467rem;
+      line-height: 0.5067rem;
+      color: #333;
+      margin-top: 0.2133rem;
+    }
+  }
+}

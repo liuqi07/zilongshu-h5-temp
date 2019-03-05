@@ -1,0 +1,15 @@
+.comp-title {
+  height: 1.3333rem;
+  line-height: 1.3333rem;
+  font-size: 0.4533rem;
+  padding-left: 0.4rem;
+  border-bottom: 1px solid #E6E6E6;
+  background: #fff;
+  &::before {
+    content: "|";
+    margin-right: 0.1067rem;
+    margin-top: 0.14rem;
+    color: #297cd5;
+    font-weight: 700;
+  }
+}

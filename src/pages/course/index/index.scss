@@ -1,0 +1,17 @@
+.course-container {
+  width: 100%;
+  .calendar {
+    width: 10rem;
+    height: auto;
+    margin-top: 0.2533rem;
+  }
+
+  .course-wrap {
+    width: 100%;
+    background: #f4f4f4;
+    padding-bottom: 0.1px;
+    .course-detail-item {
+      margin-bottom: 0.1333rem;
+    }
+  }
+}
