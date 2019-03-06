@@ -1,102 +1,114 @@
+
 .course-item{
     font-size: .346667rem;
     background: #FFFFFF;
-    border-bottom: 1px solid #E6E6E6;
     color: #333333;
     display: flex;
     align-items: center;
-    justify-content: center;
-    justify-content: space-between;
     padding: .4rem 0 0.4rem 0.4rem;
     position: relative;
+    justify-content: space-between;
+
     .img{
-        width: 3.52rem;
+        width:3.3866rem;
         height: 2.24rem;
+        margin-right: .2666rem;
+        flex: 0;
+        flex-basis: 3.3866rem;
         border-radius: .066667rem;
         background: #999999;
-        margin-right: .373333rem;
+        position: relative;
         img{
             width: 100%;
             height: 100%;
             border-radius: 0.08rem;
         }
+        img.tip{
+            position: absolute;
+            top: 0;
+            left: .1333rem;
+            display: inline-block;
+            width: .7733rem;
+            height: auto;
+            border-radius: 0;
+        }
     }
     .discript{
         height: 2.24rem;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         position: relative;
+        flex: 2;
+        overflow: hidden;
         .title{
             height: 0.4rem;
-            display: flex;
+            font-size: .42rem;
             align-items: center;
-            justify-content: space-between;
+            display: block;
             strong{
                 font-size: 0.4533rem;
                 font-weight: normal;
-                max-width: 4.666667rem;
+                display: block;
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
-            }
-            em{
-                font-size: 0.2933rem;
-                display: inline-block;
-                width: 1.0667rem;
-                height: 0.4267rem;
-                line-height: 0.4267rem;
-                margin: 0;
-                border-top-left-radius: .466667rem;
-                border-bottom-left-radius: .466667rem;
-                padding: 0 .173333rem;
-                border: none;
-            }
-            .english{
-                background:#dceefd;
-                color: #297CD5;
-            }
-            .program{
-                background:#ffe2e2;
-                color: #E84342;
-            }
-            .math{
-                background: #fdebd9;
-                color: #FF8A02;
+                line-height: 1.1;
             }
         }
         .content{
-            color: #999999;
-            font-size: 0.3733rem;
-            margin: 0.24rem .4rem .146667rem 0;
-            line-height: 0.5067rem;
+            color: #888888;
+            font-size: 0.32rem;
+            margin: 0.24rem 0 0 0;
+            line-height: 1.5;
             word-break: break-all;
             text-overflow: ellipsis;
             display: -webkit-box;
+            height: .9333rem;
             /* autoprefixer: ignore next */
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 2;
             overflow: hidden;
-            max-width: 5.333333rem;
         }
         .status{
             text-align: right;
-            margin-right: .4rem;
+
             // position: absolute;
             // right: 0;
             // bottom: 0;
             a{
-                padding: 0.0667rem 0.2133rem;
-                border-radius: 0.2933rem;
+                border: 1px solid transparent;
                 text-decoration: none;
+                font-size: .29333rem;
+                height: .5333rem;
+                width: 1.5733rem;
+                line-height: .5333rem;
+                margin-top: .13rem;
+                display: inline-block;
+                text-align: center;
+                position: relative;
+                &::after{
+                    border-radius: 0.1066rem;
+                    content: "";
+                    position: absolute;
+                    border: 1px solid #297cd5;
+                    left: 0;
+                    top: 0;
+                    transform-origin: left top;
+                    width: 200%;
+                    height: 200%;
+                    transform: scale(.5);
+                    display: inline-block;
+                }
             }
             .ing{
-                color: #333333;
+                color: #f7be39;
+                &::after{
+                    border: 1px solid #f7be39;
+                }
             }
             .end{
-                color: #FFFFFF;
-                background: #F2AD27;
+                color: #00b258;
+                &::after{
+                    border: 1px solid #f7be39;
+                }
             }
         }
     }

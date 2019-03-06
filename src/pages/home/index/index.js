@@ -2,9 +2,11 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import http from 'libs/http'
 import Swiper from '../components/swiper/'
-import { Link } from 'react-router-dom'
-import { CourseItem, TeamOfExperts } from 'components'
+import {Link} from 'react-router-dom'
+import {CourseItem, TeamOfExperts} from 'components'
 import './index.scss'
+
+import imgLimitDiscount from "../../../assets/images/home/limit-discount.png"
 
 class Home extends React.Component {
   constructor() {
@@ -13,8 +15,8 @@ class Home extends React.Component {
       courseList: []
     }
   }
-  
-  componentDidMount(){
+
+  componentDidMount() {
     this.getAuditionsCourseList()
   }
 
@@ -26,12 +28,12 @@ class Home extends React.Component {
       data.map(item => {
         courseList.push(...item.courses)
       })
-      this.setState({ courseList })
+      this.setState({courseList})
     })
   }
 
   render() {
-    const { courseList=[] } = this.state
+    const {courseList = []} = this.state
     return (
       <div className="home-container">
         <Helmet title="子龍塾-首页"/>
@@ -51,7 +53,7 @@ class Home extends React.Component {
           </div>
           <div className="free-course-content">
             {
-              courseList.map(course => 
+              courseList.map(course =>
                 <CourseItem
                   key={course.id}
                   title={course.name}
@@ -64,6 +66,24 @@ class Home extends React.Component {
                 />
               )
             }
+          </div>
+        </div>
+        {/* 限时优惠 */}
+        <div className="limit-discount">
+          <div className="title"><img src={imgLimitDiscount} alt=""/></div>
+          <div className="content">
+            <div className="item">
+              <div className="head">
+                <div className="name">龙编程初级A教程</div>
+                <div className="name">《植物大战》系列</div>
+                <div className="name"><span>15课时</span></div>
+              </div>
+              <div className="key">零基础编程录播课</div>
+              <div className="values">
+                <div className="l">108</div>
+                <div className="r">立即购买</div>
+              </div>
+            </div>
           </div>
         </div>
         {/* 专家团队 */}

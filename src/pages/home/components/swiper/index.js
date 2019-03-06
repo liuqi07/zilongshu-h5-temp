@@ -1,15 +1,25 @@
 
 import React from 'react'
 import { Carousel, WingBlank } from 'antd-mobile';
-import Bitmap from 'assets/images/home/Bitmap.png'
+import bnn from 'assets/images/home/img_banner.jpg'
+import bnnBtn from 'assets/images/home/icon_button_mfst.png'
+import bnn1 from 'assets/images/home/img_banner1.jpg'
+import bnnBtn1 from 'assets/images/home/icon_button_mfst1.png'
 
 export default class extends React.PureComponent {
+    constructor(){
+        super()
+        this.handleClick = this.handleClick.bind(this)
+    }
   state = {
     data: [
-      { img: Bitmap, to: '#/index/free-course-list' },
-      { img: Bitmap, to: '#/index/free-course-list' },
-      { img: Bitmap, to: '#/index/free-course-list' },
+      { img: bnn, btn:bnnBtn, to: '#/index/free-course-list' },
+      { img: bnn1,btn:bnnBtn1, to: '#/index/free-course-list' },
     ]
+  }
+  handleClick(it,e){
+      console.log(it)
+      e.stopPropagation()
   }
   render() {
     return (
@@ -19,13 +29,13 @@ export default class extends React.PureComponent {
           autoplay={true}
           infinite
           autoplayInterval={5000}
-          dotStyle={{ width: '0.36rem', borderRadius:'0.16rem', height: '0.08rem',marginBottom: '0.16rem' }}
-          dotActiveStyle={{ width: '0.36rem', backgroundColor:'#297cd5', borderRadius:'0.16rem',height: '0.08rem', marginBottom: '0.16rem' }}
+          dotStyle={{ width: '0.36rem', borderRadius:'0.16rem', height: '0.08rem',marginBottom: '0.266rem' }}
+          dotActiveStyle={{ width: '0.36rem', backgroundColor:'#297cd5', borderRadius:'0.16rem',height: '0.08rem', marginBottom: '0.266rem' }}
         >
           {this.state.data.map(item => (
             <a
               key={item.img}
-              href={item.to}
+            //  href={item.to}
               style={{ display: 'inline-block', width: '100%', height: '4.3rem' }}
             >
               <img
@@ -33,6 +43,11 @@ export default class extends React.PureComponent {
                 alt=""
                 style={{width: '100%', height: '100%'}}
               />
+                <img
+                src={item.btn}
+                onClick={this.handleClick.bind(this,item)}
+                className="btn"
+                />
             </a>
           ))}
         </Carousel>

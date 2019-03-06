@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import './index.scss'
+
+import ico_english from "../../assets/images/home/icon_label_EN.png"
+import ico_math from "../../assets/images/home/icon_label_math.png"
+import ico_program from "../../assets/images/home/icon_label_programme.png"
+
 const statusText={
-    1:'立即预约 >>',
+    1:'立即预约',
     2:'预约中',
     4:'预约成功',
 }
@@ -38,26 +43,29 @@ class CourseItem extends Component {
         // const href = decodeURI(`/index/subscribe?courseId=${courseId}&courseName=${courseName}`)
         const href = `#/index/subscribe/${courseId}/${courseName}`
         let _kind = ''
+        let icoImg = ''
         switch(kind) {
             case '英语':
                 _kind = 'english'
+                icoImg = ico_english
                 break;
             case '数学':
                 _kind = 'math'
+                icoImg = ico_math
                 break;
             case '编程':
                 _kind = 'program'
+                icoImg=ico_program
                 break;
             default:
                 _kind = 'english'
         }
         return (
             <div className="course-item">
-               <div className="img"><img src={img} alt=""/></div>
+               <div className="img"><img src={img} alt=""/><img className="tip" src={icoImg} alt=""/></div>
                <div className="discript">
                     <p className="title">
                         <strong>{title}</strong>
-                        <em className={_kind}>{kindText[_kind]}</em>
                     </p>
                     <div className="content">{content}</div>
                     <p className="status">
