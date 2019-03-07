@@ -72,11 +72,11 @@ class Home extends React.Component {
         <div className="limit-discount">
           <div className="title"><img src={imgLimitDiscount} alt=""/></div>
           <div className="content">
-            <div className="item">
+            <div className="item brown">
               <div className="head">
                 <div className="name">龙编程初级A教程</div>
-                <div className="name">《植物大战》系列</div>
-                <div className="name"><span>15课时</span></div>
+                <div className="des">《植物大战》系列</div>
+                <div className="last"><span>15课时</span></div>
               </div>
               <div className="key">零基础编程录播课</div>
               <div className="values">
@@ -84,12 +84,28 @@ class Home extends React.Component {
                 <div className="r">立即购买</div>
               </div>
             </div>
+
+            <div className="item blue">
+              <div className="head">
+                <div className="name">龙编程初级、中级教程</div>
+                <div className="des">《植物大战》系列《植物大战》系列《植物大战》系列《植物大战》系列《植物大战》系列《植物大战》系列</div>
+                <div className="last"><span>15课时</span></div>
+              </div>
+              <div className="key">零基础编程录播课</div>
+              <div className="values">
+                <div className="l">
+                  <div className="price"><span className="small">&yen;</span>108</div>
+                  <div className="pre"><span className="small">&yen;</span>288</div>
+                </div>
+                <div className="r"><a href="javascript:void(0)">立即购买</a></div>
+              </div>
+            </div>
           </div>
         </div>
         {/* 专家团队 */}
         <div className="team-of-experts">
           <div className="team-of-experts-header">专家团队</div>
-          <TeamOfExperts />
+          {/*  <TeamOfExperts />  */}
         </div>
         <div className="home-footer">
           <p>Copyright@2018 Zilongshu.com All Rights Reserved</p>
