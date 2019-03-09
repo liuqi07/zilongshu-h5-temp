@@ -104,10 +104,16 @@
                     border: 1px solid #f7be39;
                 }
             }
+            .unable{
+                color: #888888;
+                &::after{
+                    border: 1px solid #888888;
+                }
+            }
             .end{
                 color: #00b258;
                 &::after{
-                    border: 1px solid #f7be39;
+                    border: 1px solid #00b258;
                 }
             }
         }

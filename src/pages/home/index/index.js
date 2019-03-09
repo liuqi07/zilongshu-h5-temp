@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import {CourseItem, TeamOfExperts2} from 'components'
 import './index.scss'
 
-import imgLimitDiscount from "../../../assets/images/home/limit-discount.png"
+import imgLimitDiscount from "assets/images/home/limit-discount.png"
 
 class Home extends React.Component {
   constructor() {
@@ -18,6 +18,17 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.getAuditionsCourseList()
+  }
+
+  makeAppointment(v) {
+    var courseList = this.state.courseList;
+    for (var i = 0; i < courseList.length; i++) {
+      if (courseList[i].id == v.courseId) {
+        courseList[i].subscribeStatus = v.status;
+        break;
+      }
+    }
+    this.setState({courseList});
   }
 
   // 获取试听课列表
@@ -55,6 +66,8 @@ class Home extends React.Component {
             {
               courseList.map(course =>
                 <CourseItem
+                  onRef={this.onRef}
+                  MakeAppointment={this.makeAppointment.bind(this)}
                   key={course.id}
                   title={course.name}
                   courseName={course.name}
@@ -108,7 +121,7 @@ class Home extends React.Component {
         {/* 专家团队 */}
         <div className="team-of-experts">
           <div className="team-of-experts-header">专家团队</div>
-            <TeamOfExperts2 />
+          <TeamOfExperts2 />
         </div>
         <div className="home-footer">
           <p>Copyright@2018 Zilongshu.com All Rights Reserved</p>

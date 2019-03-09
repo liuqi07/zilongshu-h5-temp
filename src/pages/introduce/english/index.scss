@@ -1,318 +1,142 @@
 .long-english-container {
   width: 100%;
-  background: #f4f4f4;
-  padding-bottom: 0.4rem;
-  .l-eng-linian {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0.4rem 0.8rem 0.4rem;
-    margin-bottom: 0.1333rem;
-    background: #fff;
-    p {
-      font-size: 0.4533rem;
-      line-height: 0.7733rem;
-      color: #333;
-      font-weight: 500;
-    }
-    span {
-      font-size: 0.3467rem;
-      line-height: 0.5067rem;
-      color: #999;
-      font-weight: 400;
-    }
-    .audioPlayer {
-      width: 8.4rem;
-      height: 4.72rem;
-      margin-top: 0.4rem;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-      video {
-        width: 100%;
-        height: 100%;
-      }
-    }
+  background: #f3f5f9;
+  .slider {
+    touch-action: manipulation;
   }
-
-  .l-eng-desc {
+  //高效学习
+  .efficiency-learn-box {
+    background-color: #ffffff;
     width: 100%;
-    padding: 0.4rem 0.4rem 0.5333rem;
-    background: #fff;
-    margin-bottom: 0.1333rem;
-    .desc-item {
-      box-shadow:0.0267rem 0.0267rem 0.1867rem 0.04rem rgba(190,190,190,0.5);
-      border-radius: 0.08rem;
-      padding: 0 0 0.2rem;
-      margin-bottom: 0.4rem;
-      img {
-        width: 100%;
-        height: 2.24rem;
-        margin-bottom: 0.4rem;
+    overflow: hidden;
+    .e-l-t {
+      padding-top: .8rem;
+      padding-bottom: .32rem;
+      text-align: center;
+      .title {
+        padding-bottom: .4rem;
+        font-size: .48rem;
+        font-weight: bold;
       }
-      ul {
-        li {
-          margin-left: 0.6667rem;
-          margin-bottom: 0.4rem;
-          padding-right: 0.2667rem;
-          position: relative;
-          &::before {
-            content: '';
-            display: block;
-            width: 0.2667rem;
-            height: 0.2667rem;
-            border-radius: 50%;
-            background: #297CD5;
-            position: absolute;
-            left: -0.4rem;
-            top: 0.2667rem;
-          }
-          p {
-            font-size: 0.4rem;
-            line-height: 0.64rem;
-            font-weight: 400;
-            color: #333;
-          }
-          span {
-            font-size: 0.4rem;
-            line-height: 0.56rem;
-            color: #999;
-            font-weight: 400;
-          }
-        }
-      }
-      .arrow {
-        width: 100%;
-        height: 0.4rem;
-        text-align: center;
-        line-height: 0.4rem;
-        color: #999;
-        span {
-          font-size: 0.5333rem;
-        }
+      .desc {
+        font-size: .37333rem;
+        line-height: 1.5em;
+        color: #666666;
+        padding: 0 1rem;
       }
     }
-    .l-eng-arrange {
-      p {
-        width: 100%;
-        height: 0.64rem;
-        position: relative;
-        span:first-child {
-          display: block;
-          width: 2.1333rem;
-          height: 0.64rem;
-          line-height: 0.64rem;
-          text-align: center;
-          font-size: 0.4533rem;
-          color: #333;
-          font-weight: 400;
-          background: #fff;
-          position: relative;
-          z-index: 2;
-          margin-left: 0.6133rem;
-        }
-        .through-line {
-          display: block;
-          width: 100%;
-          height: 0;
-          border-top: 1px dashed #297CD5;
-          position: absolute;
-          left: 0;
-          top: 60%;
-        }
-      }
-      .l-eng-table {
-        width: 8.72rem;
-        height: 3.32rem;
-        border: 1px solid #c7c7c7;
-        border-radius: 0.1067rem;
-        margin: 0.4rem auto 0;
-        tbody {
-          width: 100%;
-          height: 100%;
-          tr {
-            width: 33%;
-            height: 25%;
-            text-align: center;
-            line-height: 25%;
-            border-bottom: 1px solid #c7c7c7;
-            td {
-              border-right: 1px solid #c7c7c7;
-              font-size: 0.4rem;
-              color: #333;
-              background: #E8F3FF;
-              &:first-child {
-                background: #297CD5;
-                color: #fff;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .l-eng-level {
-    padding: 0 0.4rem 0.4rem;
-    background: #fff;
-    margin-bottom: 0.1333rem;
-    .level-tags {
+    .item {
       width: 100%;
-      height: 1.4133rem;
+      box-shadow: 0 2px 5px rgba(197, 197, 197, .6);
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      overflow: hidden;
+   //   min-height: 10.4rem;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  //课程分级和教学目标
+  .courseLevel-teachAim {
+    .title {
+      font-size: 18px;
+      padding-left: 13px;
+      padding-top: 21px;
+    }
+  }
+  //教学系统
+  .teachSys {
+    background-color: #ffffff;
+    .title {
+      font-size: 18px;
+      padding-left: 13px;
+      padding-top: 21px;
+    }
+    .sys-box {
       display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-      span {
-        width: 1.8667rem;
-        height: 0.6rem;
-        line-height: 0.6rem;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 19px 28px 0;
+      margin-bottom: 10px;
+      .item {
+        width: 146px;
+        padding-bottom: 20px;
         text-align: center;
-        color: #fff;
-        font-size: 0.3467rem;
-        border-radius: 0.3067rem;
-        position: relative;
-        &:nth-child(1) {
-          background: #4AA4D9
+        img {
+          width: 75px;
+          height: 75px;
+          display: inline-block;
         }
-        &:nth-child(2) {
-          background: #FFAA3B;
+        .big {
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 18px;
+          color: #333333;
+          padding: 10px 0 7px;
         }
-        &:nth-child(3) {
-          background: #F57EA2;
-        }
-        &:nth-child(4) {
-          background: #8E91E0;
-        }
-        em {
-          position: absolute;
-          display: none;
-          margin: 0;
-        }
-        .active {
-          display: block;
-          width: 0;
-          height: 0;
-          border: 0.2rem solid;
-          border-color: #4AA4D9 transparent transparent transparent;
-          position: absolute;
-          left: 0.7333rem;
-          bottom: -0.3867rem;
+        .small {
+          font-size: 12px;
+          line-height: 18px;
+          color: #888888;
         }
       }
     }
-    .level-cont {
+  }
+  //专家团队
+  .team-experts-box {
+    background-color: #ffffff;
+
+    .title {
+      font-size: 18px;
+      padding-left: 13px;
+      padding-top: 21px;
+    }
+  }
+  //免费试听课
+  .free-course {
+    background: #fff;
+    margin-top: 10px;
+    .free-course-header {
+      height: 1.5rem;
+      h1 {
+        height: 1.5rem;
+        line-height: 1.5rem;
+        font-size: 0.48rem;
+        float: left;
+        margin: 0 0 0 0.4rem;
+      }
+      .more {
+        float: right;
+        margin-right: 0.4rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        font-size: 0.32rem;
+        color: #888888;
+        &::after {
+          content: '>';
+          font-size: .4rem;
+          margin-left: 0.1rem;
+        }
+      }
+    }
+    .free-course-content {
       width: 100%;
       height: auto;
-      background: #fff;
-      box-shadow: 0 0.0267rem 0.12rem 0.08rem rgba(144,144,144,0.21);
-      border-radius: 0.24rem;
-      .level-bar {
-        padding: 0.2667rem 0.8rem 0.5333rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        p:first-child {
-          width: 5.2267rem;
-          height: 0.2667rem;
-          background: #f4f4f4;
-          border-radius: 0.1333rem;
-          position: relative;
-          span {
-            width: 30%;
+      .course-item {
+        box-sizing: border-box;
+        padding: 0 .4rem 0.5333rem .4rem;
+        .course-cover-img {
+          width: 3.52rem;
+          height: 2.24rem;
+          float: left;
+          margin-right: 0.3733rem;
+          img {
+            width: 100%;
             height: 100%;
-            background: #4AA4D9;
-            border-radius: 0.1333rem;
-            position: absolute;
-            left: 0;
-            top: 0;
-          }
-        }
-        p:last-child {
-          font-size: 0.3467rem;
-          line-height: 0.5067rem;
-          color: #666;
-          font-weight: 400;
-        }
-      }
-      .level-desc {
-        padding: 0 0.2667rem 0.1333rem;
-        li {
-          margin-bottom: 0.2667rem;
-          // color: #4AA4D9;
-          font-size: 0.4267rem;
-          line-height: 0.5867rem;
-          overflow: hidden;
-          span:first-child {
-            float: left;
-            width: 0.8667rem;
-            font-weight: 500;
-            margin-right: 0.4rem;
-          }
-          span:last-child {
-            float: left;
-            width: 7.3rem;
           }
         }
       }
     }
-  }
-
-  .l-eng-system {
-    height: 8.4rem;
-    padding: 0.5333rem;
-    margin-bottom: 0.1333rem;
-    background: #fff;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-content: space-between;
-    .sys-item {
-      width: 4rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      p {
-        width: 1.4667rem;
-        height: 1.4667rem;
-        line-height: 1.4667rem;
-        border-radius: 50%;
-        text-align: center;
-        font-size: 0.8rem;
-        font-weight: 500;
-        margin-bottom: 0.4rem;
-        &.p1 {
-          border: 1px solid #4AA4D9;
-          color: #4AA4D9;
-        }
-        &.p2 {
-          border: 1px solid #FFAA3B;
-          color: #FFAA3B;
-        }
-        &.p3 {
-          border: 1px solid #8E91E0;
-          color: #8E91E0;
-        }
-        &.p4 {
-          border: 1px solid #F57EA2;
-          color: #F57EA2;
-        }
-      }
-      span {
-        font-size: 0.4rem;
-        line-height: 0.56rem;
-        font-weight: 400;
-        color: #666;
-      }
-    }
-  }
-
-  .l-eng-experts {
-    width: 100%;
-    background: #fff;
-    margin-bottom: 0.1333rem;
   }
 }

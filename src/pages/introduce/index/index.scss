@@ -1,7 +1,26 @@
 .introduce-container {
-  
+  .swiper-container {
+    width: 100%;
+    box-sizing: border-box;
+    .am-wingblank.am-wingblank-lg {
+      margin: 0 0;
+    }
+    .slider {
+      touch-action: manipulation;
+    }
+    .slider-slide {
+      .btn {
+        position: absolute;
+
+        bottom: 0.66rem;
+        width: 2.612rem;
+        left: 50%;
+        margin-left: -1.306rem;
+      }
+    }
+  }
   .main-container {
-    width: 100;
+    width: 100%;
     height: auto;
     background: #f4f4f4;
   }

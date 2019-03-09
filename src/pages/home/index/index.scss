@@ -13,18 +13,17 @@ $txt-red: #fd6c58;
     .am-wingblank.am-wingblank-lg {
       margin: 0 0;
     }
-  }
-  .slider {
-    touch-action: none;
-  }
-  .slider-slide {
-    .btn {
-      position: absolute;
-
-      bottom: 0.66rem;
-      width: 2.612rem;
-      left: 50%;
-      margin-left: -1.306rem;
+    .slider {
+      touch-action: manipulation;
+    }
+    .slider-slide {
+      .btn {
+        position: absolute;
+        bottom: 0.66rem;
+        width: 2.612rem;
+        left: 50%;
+        margin-left: -1.306rem;
+      }
     }
   }
 
@@ -179,26 +178,28 @@ $txt-red: #fd6c58;
             width: 4rem;
           }
           .last {
-            margin-top: .2rem;
+            margin-top: 0.2rem;
             span {
               display: inline-block;
               position: relative;
-              height: .4rem;
-              font-size: .29333rem;
+              height: 0.4rem;
+              font-size: 0.29333rem;
               line-height: .4rem;
-              padding: 0 .2rem;
+              padding: 0.05rem 0.2rem;
+              box-sizing: border-box;
               &::after {
-                content: "";
-                display: inline-block;
-                width: 202%;
-                height: 202%;
-                transform: scale(.5);
+                content: " ";
+                display: block;
+                width: 200%;
+                height: 200%;
+                transform: scale(0.5);
                 left: 0;
                 top: 0;
                 border: 1px solid #ffffff;
                 position: absolute;
                 transform-origin: left top;
-                border-radius: .48rem;
+                border-radius: 0.48rem;
+                z-index: 1;
               }
             }
           }
