@@ -9,7 +9,6 @@ $txt-red: #fd6c58;
   background: #f3f5f9;
   .swiper-container {
     width: 100%;
-    height: 4.3rem;
     box-sizing: border-box;
     .am-wingblank.am-wingblank-lg {
       margin: 0 0;
@@ -21,7 +20,7 @@ $txt-red: #fd6c58;
   .slider-slide {
     .btn {
       position: absolute;
-      z-index: 10;
+
       bottom: 0.66rem;
       width: 2.612rem;
       left: 50%;
@@ -115,7 +114,6 @@ $txt-red: #fd6c58;
       .course-item {
         box-sizing: border-box;
         padding: 0 .4rem 0.5333rem .4rem;
-
         .course-cover-img {
           width: 3.52rem;
           height: 2.24rem;
@@ -276,7 +274,7 @@ $txt-red: #fd6c58;
     .team-of-experts-header {
       color: $txt-black;
       padding-top: .48rem;
-
+      font-weight: bold;
       line-height: 1;
       font-size: 0.48rem;
       margin-left: 0.36rem;

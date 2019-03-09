@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import http from 'libs/http'
 import Swiper from '../components/swiper/'
 import {Link} from 'react-router-dom'
-import {CourseItem, TeamOfExperts} from 'components'
+import {CourseItem, TeamOfExperts2} from 'components'
 import './index.scss'
 
 import imgLimitDiscount from "../../../assets/images/home/limit-discount.png"
@@ -80,8 +80,11 @@ class Home extends React.Component {
               </div>
               <div className="key">零基础编程录播课</div>
               <div className="values">
-                <div className="l">108</div>
-                <div className="r">立即购买</div>
+                <div className="l">
+                  <div className="price"><span className="small">&yen;</span>108</div>
+                  <div className="pre"><span className="small">&yen;</span>288</div>
+                </div>
+                <div className="r"><a href="javascript:void(0)">立即购买</a></div>
               </div>
             </div>
 
@@ -105,7 +108,7 @@ class Home extends React.Component {
         {/* 专家团队 */}
         <div className="team-of-experts">
           <div className="team-of-experts-header">专家团队</div>
-          {/*  <TeamOfExperts />  */}
+            <TeamOfExperts2 />
         </div>
         <div className="home-footer">
           <p>Copyright@2018 Zilongshu.com All Rights Reserved</p>
