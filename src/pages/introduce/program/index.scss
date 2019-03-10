@@ -44,7 +44,7 @@
           width: 100%;
           height: 100%;
         }
-        .play{
+        .play {
           width: 45px;
           height: 45px;
           margin: auto;
@@ -63,47 +63,45 @@
       }
     }
   }
-
   //课程分级和教学目标
   .courseLevel-teachAim {
     background-color: #ffffff;
     margin-bottom: 10px;
-    .title{
+    .title {
       font-size: 18px;
       padding-left: 13px;
       padding-top: 20px;
     }
   }
-
   //教学系统
-  .teachSys{
+  .teachSys {
     background-color: #ffffff;
-    .title{
+    .title {
       font-size: 18px;
       padding-left: 13px;
       padding-top: 21px;
     }
-    .sys-box{
+    .sys-box {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       padding: 21px 22px 5px;
       margin-bottom: 10px;
-      .item{
+      .item {
         text-align: center;
         width: 160px;
         padding-bottom: 21px;
         color: #333333;
-        .img{
+        .img {
           text-align: center;
           margin-bottom: 11px;
         }
-        img{
+        img {
           width: 75px;
           height: 75px;
           display: inline-block;
         }
-        .big{
+        .big {
           font-size: 16px;
           font-weight: bold;
           line-height: 20px;
@@ -130,7 +128,7 @@
       .item {
         background-size: cover;
         width: 4.4267rem;
-        box-shadow: 0 1px  6px rgba(0,0,0,.2);
+        box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
         border-radius: 4px;
         overflow: hidden;
         .head {
@@ -157,7 +155,7 @@
 
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 2;
-            line-clamp:2;
+            line-clamp: 2;
             overflow: hidden;
             text-overflow: ellipsis;
             word-break: break-all;
@@ -190,44 +188,43 @@
             }
           }
         }
-        .key{
+        .key {
           font-size: .37rem;
           color: $txt-black;
           line-height: 1;
           padding: .24rem .2rem;
         }
-        .values{
+        .values {
           display: flex;
           justify-content: space-between;
           padding: 0 .2rem;
           align-items: center;
           padding-bottom: .333rem;
           overflow: visible;
-          .l{
-            .price{
+          .l {
+            .price {
               color: $txt-red;
               font-size: .48rem;
-              span{
+              span {
                 font-size: .32rem;
               }
             }
-            .pre{
+            .pre {
               padding-top: .1rem;
               color: $txt-gray;
               font-size: .32rem;
               text-decoration: line-through;
-              span{
+              span {
                 font-size: .266rem;
               }
             }
           }
-          .r{
-            a{
+          .r {
+            a {
               display: inline-block;
               position: relative;
               padding: .12rem .2rem;
-
-              &:after{
+              &:after {
                 display: inline-block;
                 position: absolute;
                 left: 0;
@@ -257,22 +254,23 @@
       }
     }
   }
-
-  .model{
+  .model {
     background-color: #ffffff;
-    .title{
+    .title {
       color: $blue;
       font-size: 18px;
       padding: 30px 0 18px;
       text-align: center;
-      img{
+      img {
         height: 16px;
-        vertical-align: bottom;
+        vertical-align: -5.55%;
+        line-height: 18px;
       }
-      span{
+      span {
         padding: 0 6px;
+        display: inline-block;
       }
-      .reverse{
+      .reverse {
         transform: rotate(180deg);
       }
     }
@@ -288,7 +286,7 @@
         width: 100%;
         height: 100%;
       }
-      .play{
+      .play {
         width: 45px;
         height: 45px;
         margin: auto;
@@ -299,17 +297,17 @@
         bottom: 0;
       }
     }
-    .imgs{
-     display: flex;
+    .imgs {
+      display: flex;
       justify-content: space-between;
       box-sizing: border-box;
       padding: 0 15px;
-      div{
+      div {
         display: inline-block;
         width: 48.5%;
       }
-      img{
-      //  width: 166px;
+      img {
+        //  width: 166px;
         width: 100%;
         height: auto;
         margin-bottom: 17px;

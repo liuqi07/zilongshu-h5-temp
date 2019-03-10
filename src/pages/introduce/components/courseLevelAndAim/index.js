@@ -21,7 +21,7 @@ export default class extends React.PureComponent {
   componentDidMount() {
     this.swiper = new Swiper(this.swiperId, {
       slidesPerView: 'auto',
-      spaceBetween: 30,
+      spaceBetween: 10,
     });
   }
 
