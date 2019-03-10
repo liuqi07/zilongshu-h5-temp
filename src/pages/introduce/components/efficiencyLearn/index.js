@@ -1,8 +1,6 @@
 import React from 'react'
 import {Carousel, WingBlank} from 'antd-mobile';
 import './index.scss'
-import enteacher from "assets/images/course/img_en_teacher.png"
-import cnteacher from "assets/images/course/img_cn_teacher.png"
 
 import cnhead from "assets/images/course/effective_teach_cn.png"
 import enhead from "assets/images/course/effective_teach_en.png"
@@ -25,7 +23,7 @@ export default class extends React.PureComponent {
       <WingBlank>
         <Carousel
           cellSpacing={30}
-          frameOverflow="visible"
+
           autoplay={false}
           dotStyle={{width: '0.36rem', borderRadius: '0.16rem', height: '0.08rem', marginBottom: '0.48rem'}}
           dotActiveStyle={{

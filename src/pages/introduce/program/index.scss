@@ -202,6 +202,7 @@
           padding: 0 .2rem;
           align-items: center;
           padding-bottom: .333rem;
+          overflow: visible;
           .l{
             .price{
               color: $txt-red;
@@ -225,7 +226,8 @@
               display: inline-block;
               position: relative;
               padding: .12rem .2rem;
-              &::after{
+
+              &:after{
                 display: inline-block;
                 position: absolute;
                 left: 0;
@@ -235,6 +237,7 @@
                 transform-origin: left top;
                 transform: scale(.5);
                 border: 1px solid $blue;
+                border-right: 1.5px solid $blue;
                 content: " ";
                 border-radius: 8px;
               }

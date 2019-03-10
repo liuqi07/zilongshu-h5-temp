@@ -107,7 +107,7 @@ export default class extends React.Component {
                   <div className="price"><span className="small">&yen;</span>108</div>
                   <div className="pre"><span className="small">&yen;</span>288</div>
                 </div>
-                <div className="r"><a href="javascript:void(0)">立即购买</a></div>
+                <div className="r"><a className="buybtn" href="javascript:void(0)">立即购买</a></div>
               </div>
             </div>
 
@@ -123,7 +123,7 @@ export default class extends React.Component {
                   <div className="price"><span className="small">&yen;</span>108</div>
                   <div className="pre"><span className="small">&yen;</span>288</div>
                 </div>
-                <div className="r"><a href="javascript:void(0)">立即购买</a></div>
+                <div className="r"><a className="buybtn" href="javascript:void(0)">立即购买</a></div>
               </div>
             </div>
           </div>

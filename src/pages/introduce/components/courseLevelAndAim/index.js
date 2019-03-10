@@ -27,7 +27,7 @@ export default class extends React.PureComponent {
 
   render() {
     return (
-      <div className="course-aim"  ref={self => this.swiperId = self}>
+      <div className="course-aim en"  ref={self => this.swiperId = self}>
         <div className=" swiper-wrapper">
 
           <div className="swiper-slide bas">

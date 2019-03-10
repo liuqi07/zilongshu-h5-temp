@@ -2,9 +2,10 @@
 .efficiency-learn-box{
   .item {
     width: 100%;
-    touch-action: manipulation;
+  //   touch-action: pan-x;;
     box-shadow: 0 0 5px rgba(197, 197, 197, .6);
     height: 10.3rem;
+    background-color: #effaff;
     .hidden{
       display: none;
     }
@@ -167,6 +168,7 @@
       }
     }
     &.en{
+      background-color: #fff8e9;
       .info{
         background-color: #fff8e9;
         height: 4.48rem;

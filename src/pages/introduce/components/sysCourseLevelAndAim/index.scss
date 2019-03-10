@@ -1,4 +1,4 @@
-.course-aim{
+.course-aim.sys{
   width: 100%;
   overflow: hidden;
   padding: 20px 15px 17px;
@@ -84,6 +84,7 @@
         word-break: break-all;
         display: -webkit-box;
         -webkit-line-clamp: 4;
+        white-space: normal;
       }
     }
   }

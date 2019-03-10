@@ -235,10 +235,11 @@ $txt-red: #fd6c58;
             }
           }
           .r{
-            a{
+            a.buybtn{
               display: inline-block;
               position: relative;
               padding: .12rem .2rem;
+              border: 1px solid transparent;
               &::after{
                 display: inline-block;
                 position: absolute;
