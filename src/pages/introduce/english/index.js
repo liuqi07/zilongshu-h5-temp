@@ -129,105 +129,10 @@ export default class extends React.Component {
     this.setState({ descData })
   }
 
-  renderDesc = () => {
-    const { descData } = this.state
-    return descData.map((item, index) => (
-      <div className="desc-item" key={index}>
-        <img src={item.img} />
-        <ul>
-          {
-            item.list.map((li, i) => {
-              if(i >= item.showLen) return
-              return (
-                <li key={i}>
-                  <p>{li.title}</p>
-                  <span>{li.cont}</span>
-                </li>
-              )
-            })
-          }
-        </ul>
-        <div className="arrow" onClick={this.showMore(descData, index)}>
-          <span className={`iconfont-zilongshu ${item.showLen ===1 ? 'icon-zilong-xiangxiazhanhang' : 'icon-zilong-xiangshangzhanhang'}`}></span>
-        </div>
-      </div>
-    ))
-  }
-
-  renderTable = () => {
-    return (
-      <table className="l-eng-table">
-        <tbody>
-          <tr><td>课程计划A</td><td>每周1课时</td><td>48课时/年</td></tr>
-          <tr><td>课程计划B</td><td>每周2课时</td><td>96课时/年</td></tr>
-          <tr><td>课程计划C</td><td>每周3课时</td><td>144课时/年</td></tr>
-          <tr><td>课程计划D</td><td>每周4课时</td><td>192课时/年</td></tr>
-        </tbody>
-      </table>
-    )
-  }
-
   handleTagClick = (e) => {
     const tagIndex = e.target.dataset.tagIndex
     if(isNaN(tagIndex)) { return }
     this.setState({ currLevelIndex: tagIndex })
-  }
-
-  renderLevel = () => {
-    const { levelData, currLevelIndex } = this.state
-    const currentLevelData = levelData[currLevelIndex]
-    return (
-      <React.Fragment>
-        <div className="level-tags" onClick={this.handleTagClick}>
-          <span data-tag-index={0} >
-            入门级<em className={`${currLevelIndex==0 ? 'active' : ''}`} style={{borderColor: `${currentLevelData.color} transparent transparent transparent`}} ></em>
-          </span>
-          <span data-tag-index={1} >
-            初级<em className={`${currLevelIndex==1 ? 'active' : ''}`} style={{borderColor: `${currentLevelData.color} transparent transparent transparent`}} ></em>
-          </span>
-          <span data-tag-index={2} >
-            中级<em className={`${currLevelIndex==2 ? 'active' : ''}`} style={{borderColor: `${currentLevelData.color} transparent transparent transparent`}} ></em>
-          </span>
-          <span data-tag-index={3} >
-            提高级<em className={`${currLevelIndex==3 ? 'active' : ''}`} style={{borderColor: `${currentLevelData.color} transparent transparent transparent`}} ></em>
-          </span>
-        </div>
-        <div className="level-cont">
-          <div className="level-bar">
-            <p><span style={{width: `${(parseInt(currLevelIndex)+1) * 25}%`, background: currentLevelData.color}}></span></p>
-            <p>{currentLevelData.level}</p>
-          </div>
-          <ul className="level-desc">
-            {
-              currentLevelData.list.map((li, i) => 
-                <li key={i} style={{ color: currentLevelData.color }}>
-                  <span>{li.title}</span><span>{li.desc}</span>
-                </li>
-              )
-            }
-          </ul>
-        </div>
-      </React.Fragment>
-    )
-  }
-
-  getVideoUrl = () => {
-    http.get('/mstudent/common/getPublicByCode?code=ENGLISH_TV')
-    .then(res => {
-      const videoUrl = res.data.TV_URL
-      this.setState({ videoUrl })
-    })
-  }
-
-  makeAppointment(v) {
-    var courseList = this.state.courseList;
-    for (var i = 0; i < courseList.length; i++) {
-      if (courseList[i].id == v.courseId) {
-        courseList[i].subscribeStatus = v.status;
-        break;
-      }
-    }
-    this.setState({courseList});
   }
 
   render() {
@@ -285,8 +190,6 @@ export default class extends React.Component {
             {
               courseList.map(course =>
                 <CourseItem
-                  onRef={this.onRef}
-                  MakeAppointment={this.makeAppointment.bind(this)}
                   key={course.id}
                   title={course.name}
                   courseName={course.name}

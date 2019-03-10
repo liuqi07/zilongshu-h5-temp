@@ -12,34 +12,59 @@ class Home extends React.Component {
   constructor() {
     super()
     this.state = {
-      courseList: []
+      courseList: [],
+      coursePackageList: []
     }
   }
 
   componentDidMount() {
     this.getAuditionsCourseList()
-  }
-
-  makeAppointment(v) {
-    var courseList = this.state.courseList;
-    for (var i = 0; i < courseList.length; i++) {
-      if (courseList[i].id == v.courseId) {
-        courseList[i].subscribeStatus = v.status;
-        break;
-      }
-    }
-    this.setState({courseList});
+    this.getCoursePackageList()
   }
 
   // 获取试听课列表
   getAuditionsCourseList() {
     http.get('/mstudent/business/getAuditionsCourseListH5').then(res => {
-      const data = res.data
-      const courseList = []
+      const data = res.data;
+      const courseList = [];
       data.map(item => {
         courseList.push(...item.courses)
       })
       this.setState({courseList})
+    })
+  }
+
+//购买显示优惠
+  buyDiscountCourse(i) {
+    if(this.state.coursePackageList[i].buying){
+      return ;
+    }
+    this.state.coursePackageList[i].buying = true;
+    http.post('/mstudent/business/createOrder',{packageId:this.state.coursePackageList[i].packageId}).then(res=>{
+      if(res.code === 1){
+        // todo 带着返回参数跳转到订单详情页
+        return ;
+      }
+      this.state.coursePackageList[i].buying = false;
+    }).catch(e=>{
+      this.state.coursePackageList[i].buying = false;
+    })
+  }
+
+  // 获取限时优惠数据
+  getCoursePackageList() {
+    http.get('/mstudent/business/getCoursePackageList').then(res => {
+      if (res.code === 1) {
+        let coursePackageList = [];
+        for (let i = 0; i < res.data.length; i++) {
+          if (res.data[i].courseName === "编程") {
+            coursePackageList = res.data[i].packages.slice(0, 2);
+          }
+        }
+        this.setState({
+          coursePackageList
+        })
+      }
     })
   }
 
@@ -66,8 +91,6 @@ class Home extends React.Component {
             {
               courseList.map(course =>
                 <CourseItem
-                  onRef={this.onRef}
-                  MakeAppointment={this.makeAppointment.bind(this)}
                   key={course.id}
                   title={course.name}
                   courseName={course.name}
@@ -85,37 +108,28 @@ class Home extends React.Component {
         <div className="limit-discount">
           <div className="title"><img src={imgLimitDiscount} alt=""/></div>
           <div className="content">
-            <div className="item brown">
-              <div className="head">
-                <div className="name">龙编程初级A教程</div>
-                <div className="des">《植物大战》系列</div>
-                <div className="last"><span>15课时</span></div>
-              </div>
-              <div className="key">零基础编程录播课</div>
-              <div className="values">
-                <div className="l">
-                  <div className="price"><span className="small">&yen;</span>108</div>
-                  <div className="pre"><span className="small">&yen;</span>288</div>
-                </div>
-                <div className="r"><a className="buybtn" href="javascript:void(0)">立即购买</a></div>
-              </div>
-            </div>
-
-            <div className="item blue">
-              <div className="head">
-                <div className="name">龙编程初级、中级教程</div>
-                <div className="des">《植物大战》系列《植物大战》系列《植物大战》系列《植物大战》系列《植物大战》系列《植物大战》系列</div>
-                <div className="last"><span>15课时</span></div>
-              </div>
-              <div className="key">零基础编程录播课</div>
-              <div className="values">
-                <div className="l">
-                  <div className="price"><span className="small">&yen;</span>108</div>
-                  <div className="pre"><span className="small">&yen;</span>288</div>
-                </div>
-                <div className="r"><a className="buybtn" href="javascript:void(0)">立即购买</a></div>
-              </div>
-            </div>
+            {
+              this.state.coursePackageList.map((v, i) => {
+                return (
+                  <div className={i === 0 ? 'item brown' : 'item blue'} key={i}>
+                    <div className="head">
+                      <div className="name">{v.courseName}</div>
+                      <div className="des">{v.courseDesc}</div>
+                      <div className="last"><span>{v.hours}课时</span></div>
+                    </div>
+                    <div className="key">零基础编程录播课</div>
+                    <div className="values">
+                      <div className="l">
+                        <div className="price"><span className="small">&yen;</span>{v.realAmt}</div>
+                        <div className="pre"><span className="small">&yen;</span>{v.amt}</div>
+                      </div>
+                      <div className="r"><a className="buybtn" onClick={this.buyDiscountCourse.bind(this, i)}
+                                            href="javascript:void(0)">立即购买</a></div>
+                    </div>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
         {/* 专家团队 */}

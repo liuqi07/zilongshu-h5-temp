@@ -38,22 +38,7 @@ class CourseItem extends Component {
   }
 
   makeAppointment() {
-    if(this.state.appointing|| this.props.status>1){
-      return ;
-    }
-    this.setState({appointing:true})
-    http.post('/mstudent/business/appointment',{courseId:this.props.courseId+"sdsdsds"}).then(res=>{
-      if(res.code===1){
-        //  Toast.info('预约成功');
-        this.props.MakeAppointment({courseId:this.props.courseId,status:2})
-        return
-      }
-      this.setState({appointing:false})
-      Toast.fail('预约失败');
-    }).catch(e=>{
-      this.props.MakeAppointment({courseId:this.props.courseId,status:2})
-      this.setState({appointing:false})
-    });
+    window.location.href='#/index/subscribe/'+this.props.courseId+'/'+this.props.title;
   }
 
   componentDidMount() {
