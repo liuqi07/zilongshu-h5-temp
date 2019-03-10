@@ -244,11 +244,13 @@
         &.brown {
           .head {
             background: url("../../../assets/images/home/img_limit_discount1.png") no-repeat;
+            background-size: cover;
           }
         }
         &.blue {
           .head {
             background: url("../../../assets/images/home/img_limit_discount2.png") no-repeat;
+            background-size: cover;
           }
         }
       }
