@@ -42,7 +42,7 @@ class Home extends React.Component {
     this.state.coursePackageList[i].buying = true;
     http.post('/mstudent/business/createOrder',{packageId:this.state.coursePackageList[i].packageId}).then(res=>{
       if(res.code === 1){
-        // todo 带着返回参数跳转到订单详情页
+        // todo 带着返回参数跳转到订单详情页  res.data=38
         return ;
       }
       this.state.coursePackageList[i].buying = false;
@@ -111,13 +111,13 @@ class Home extends React.Component {
             {
               this.state.coursePackageList.map((v, i) => {
                 return (
-                  <div className={i === 0 ? 'item brown' : 'item blue'} key={i}>
-                    <div className="head">
-                      <div className="name">{v.courseName}</div>
-                      <div className="des">{v.courseDesc}</div>
+                  <div className='item' key={i}>
+                    <div className="head" style={{'backgroundImage':'url('+v.coursePackageImageUrl+' )'}}>
+                     {/* <div className="name">{v.courseName}</div>
+                      <div className="des">{v.courseDesc}</div>*/}
                       <div className="last"><span>{v.hours}课时</span></div>
                     </div>
-                    <div className="key">零基础编程录播课</div>
+                    <div className="key">{v.courseName}</div>
                     <div className="values">
                       <div className="l">
                         <div className="price"><span className="small">&yen;</span>{v.realAmt}</div>

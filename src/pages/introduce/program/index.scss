@@ -137,6 +137,9 @@
           padding: .2666rem .2666rem .32rem;
           color: #ffffff;
           width: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          position: relative;
           .name {
             font-size: .38rem;
             line-height: .46rem;
@@ -162,7 +165,10 @@
             width: 4rem;
           }
           .last {
-            margin-top: 0.2rem;
+         //   margin-top: 0.2rem;
+            position: absolute;
+            left: .2666rem ;
+            bottom: .2rem;
             span {
               display: inline-block;
               position: relative;
@@ -240,18 +246,6 @@
                 margin-top: -1px;
               }
             }
-          }
-        }
-        &.brown {
-          .head {
-            background: url("../../../assets/images/home/img_limit_discount1.png") no-repeat;
-            background-size: cover;
-          }
-        }
-        &.blue {
-          .head {
-            background: url("../../../assets/images/home/img_limit_discount2.png") no-repeat;
-            background-size: cover;
           }
         }
       }
