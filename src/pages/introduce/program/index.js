@@ -21,15 +21,22 @@ export default class extends React.Component {
   constructor(){
     super();
     this.state = {
-      videoUrl:"",
+      videoUrl:"", // 录播课视频
+      expandVideoUrl:'',  //提升视频
       coursePackageList:[]
     }
   }
-  getVideoUrl = () => {
-    http.get('/mstudent/common/getPublicByCode?code=ENGLISH_TV')
+  //获取视频地址
+  getVideoUrl = (type) => {
+    let code = type === 'expandVideo' ? 'BIAN_CHENG_TV1':'BIAN_CHENG_TV';
+    http.get('/mstudent/common/getPublicByCode?code='+code)
       .then(res => {
-        const videoUrl = res.data.TV_URL
-        this.setState({ videoUrl })
+        const videoUrl = res.data.TV_URL;
+        if(type === 'expandVideo'){
+          this.setState({ expandVideoUrl:videoUrl })
+        }else{
+          this.setState({ videoUrl })
+        }
       })
   }
   componentDidMount() {
@@ -43,7 +50,8 @@ export default class extends React.Component {
     this.state.coursePackageList[i].buying = true;
     http.post('/mstudent/business/createOrder',{packageId:this.state.coursePackageList[i].packageId}).then(res=>{
       if(res.code === 1){
-        // todo 带着返回参数跳转到订单详情页
+        window.localStorage.setItem("orderId",res.data);
+        window.location.href="/wechat/static/#/mine/orderDetail";
         return ;
       }
       this.state.coursePackageList[i].buying = false;
@@ -70,7 +78,7 @@ export default class extends React.Component {
   }
 
   render() {
-    const {  videoUrl } = this.state
+    const {  videoUrl,expandVideoUrl } = this.state
     return (
       <div className="long-program-container">
 
@@ -81,13 +89,13 @@ export default class extends React.Component {
             <div className="audioPlayer">
               <img
                 src={videoPoster}
-                style={{ display: `${videoUrl ? 'none' : 'block'}` }}
+                style={{ display: `${expandVideoUrl ? 'none' : 'block'}` }}
               />
-              <img src={videoPlay} onClick={this.getVideoUrl} alt="" className="play"/>
+              <img src={videoPlay} style={{'display':expandVideoUrl?'none':'block'}} onClick={this.getVideoUrl.bind(this,'expandVideo')} alt="" className="play"/>
               <video
                 controlsList='nodownload'
-                style={{ display: `${videoUrl ? 'inline-block' : 'none'}` }}
-                src={videoUrl}
+                style={{ display: `${expandVideoUrl ? 'inline-block' : 'none'}` }}
+                src={expandVideoUrl}
                 controls
                 autoPlay
               />
@@ -163,7 +171,7 @@ export default class extends React.Component {
 
               style={{ display: `${videoUrl ? 'none' : 'block'}` }}
             />
-            <img src={videoPlay}  onClick={this.getVideoUrl} alt="" className="play"/>
+            <img src={videoPlay} style={{'display':videoUrl ? 'none':'block'}}  onClick={this.getVideoUrl.bind(this,'video')} alt="" className="play"/>
             <video
               controlsList='nodownload'
               style={{ display: `${videoUrl ? 'inline-block' : 'none'}` }}

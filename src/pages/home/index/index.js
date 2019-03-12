@@ -42,7 +42,8 @@ class Home extends React.Component {
     this.state.coursePackageList[i].buying = true;
     http.post('/mstudent/business/createOrder',{packageId:this.state.coursePackageList[i].packageId}).then(res=>{
       if(res.code === 1){
-        // todo 带着返回参数跳转到订单详情页  res.data=38
+        window.localStorage.setItem("orderId",res.data);
+        window.location.href="/wechat/static/#/mine/orderDetail";
         return ;
       }
       this.state.coursePackageList[i].buying = false;
