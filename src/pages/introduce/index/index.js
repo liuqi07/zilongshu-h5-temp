@@ -4,6 +4,7 @@ import { Tabs, IntroduceBanner } from 'components'
 import renderRoutes from 'libs/routes';
 import * as util from 'libs/utils'
 import './index.scss'
+import Swiper from '../components/swiper/'
 
 export default class extends React.Component {
   constructor() {
@@ -56,7 +57,9 @@ export default class extends React.Component {
     const { title, subTitle, href } = bannerCopyWriter
     return (
       <div className="introduce-container">
-        <IntroduceBanner title={title} subTitle={subTitle} href={href} />
+        <div className="swiper-container">
+          <Swiper />
+        </div>
         <Tabs tabs={tabs} changeTab={this.changeTab} />
         <div className="main-conteiner">
           {renderRoutes('/introduce')}

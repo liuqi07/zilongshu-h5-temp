@@ -18,8 +18,9 @@ export default class extends React.PureComponent {
     ]
   }
   handleClick(it,e){
-      e.stopPropagation()
-      window.location.href = it.to;
+
+      e.stopPropagation();
+      location.href=it.to;
   }
   render() {
     return (

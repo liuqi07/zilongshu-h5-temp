@@ -36,7 +36,7 @@ export default class extends React.PureComponent {
     data.map((item, i) => {
       item.active = i === to ? '-active' : ''
     })
-    this.setState({ slideIndex: to, data })
+    this.setState({  data })
   }
   render() {
     const { data } = this.state
@@ -45,8 +45,8 @@ export default class extends React.PureComponent {
         <WingBlank>
           <Carousel className="space-carousel"
             frameOverflow="visible"
-            cellSpacing={50}
-            slideWidth={0.58}
+            cellSpacing={30}
+            slideWidth={0.8}
             dots={false}
             autoplay
             infinite
@@ -56,7 +56,7 @@ export default class extends React.PureComponent {
             afterChange={this.afterChange}
           >
             {data.map((item, index) => (
-              <div className={`item-page${item.active}`} key={index}>
+              <div className={`item-page`} key={index}>
                 <div className="img"><img src={item.img} /></div>
                 <p className="name">{item.name}</p>
                 <p className="country">{item.country}</p>

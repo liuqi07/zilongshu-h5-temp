@@ -1,11 +1,16 @@
 import React from 'react'
-import Helmet from 'react-helmet'
-import TitleComp from '../components/title'
-import { TeamOfExperts, CourseItem } from 'components'
+import {Link} from 'react-router-dom'
+import { TeamOfExperts2, CourseItem } from 'components'
+import EfficiencyLearn from "../components/efficiencyLearn"
+import CourseLevelAndAim from '../components/courseLevelAndAim'
 import http from 'libs/http'
-import descImg1 from '../../../assets/images/introduce/descImg1.png'
-import descImg2 from '../../../assets/images/introduce/descImg2.png'
-import defaultAudioImg from '../../../assets/images/introduce/defaultAudioImg.png'
+import descImg1 from 'assets/images/introduce/descImg1.png'
+import descImg2 from 'assets/images/introduce/descImg2.png'
+import sysLearn from 'assets/images/course/sys_learn.png'
+import sysTeach from 'assets/images/course/sys_teach.png'
+import sysTest from 'assets/images/course/sys_test.png'
+import sysRetest from 'assets/images/course/sys_retest.png'
+
 import './index.scss'
 
 export default class extends React.Component {
@@ -124,166 +129,75 @@ export default class extends React.Component {
     this.setState({ descData })
   }
 
-  renderDesc = () => {
-    const { descData } = this.state
-    return descData.map((item, index) => (
-      <div className="desc-item" key={index}>
-        <img src={item.img} />
-        <ul>
-          {
-            item.list.map((li, i) => {
-              if(i >= item.showLen) return
-              return (
-                <li key={i}>
-                  <p>{li.title}</p>
-                  <span>{li.cont}</span>
-                </li>
-              )
-            })
-          }
-        </ul>
-        <div className="arrow" onClick={this.showMore(descData, index)}>
-          <span className={`iconfont-zilongshu ${item.showLen ===1 ? 'icon-zilong-xiangxiazhanhang' : 'icon-zilong-xiangshangzhanhang'}`}></span>
-        </div>
-      </div>
-    ))
-  }
-
-  renderTable = () => {
-    return (
-      <table className="l-eng-table">
-        <tbody>
-          <tr><td>课程计划A</td><td>每周1课时</td><td>48课时/年</td></tr>
-          <tr><td>课程计划B</td><td>每周2课时</td><td>96课时/年</td></tr>
-          <tr><td>课程计划C</td><td>每周3课时</td><td>144课时/年</td></tr>
-          <tr><td>课程计划D</td><td>每周4课时</td><td>192课时/年</td></tr>
-        </tbody>
-      </table>
-    )
-  }
-
   handleTagClick = (e) => {
     const tagIndex = e.target.dataset.tagIndex
     if(isNaN(tagIndex)) { return }
     this.setState({ currLevelIndex: tagIndex })
   }
 
-  renderLevel = () => {
-    const { levelData, currLevelIndex } = this.state
-    const currentLevelData = levelData[currLevelIndex]
-    return (
-      <React.Fragment>
-        <div className="level-tags" onClick={this.handleTagClick}>
-          <span data-tag-index={0} >
-            入门级<em className={`${currLevelIndex==0 ? 'active' : ''}`} style={{borderColor: `${currentLevelData.color} transparent transparent transparent`}} ></em>
-          </span>
-          <span data-tag-index={1} >
-            初级<em className={`${currLevelIndex==1 ? 'active' : ''}`} style={{borderColor: `${currentLevelData.color} transparent transparent transparent`}} ></em>
-          </span>
-          <span data-tag-index={2} >
-            中级<em className={`${currLevelIndex==2 ? 'active' : ''}`} style={{borderColor: `${currentLevelData.color} transparent transparent transparent`}} ></em>
-          </span>
-          <span data-tag-index={3} >
-            提高级<em className={`${currLevelIndex==3 ? 'active' : ''}`} style={{borderColor: `${currentLevelData.color} transparent transparent transparent`}} ></em>
-          </span>
-        </div>
-        <div className="level-cont">
-          <div className="level-bar">
-            <p><span style={{width: `${(parseInt(currLevelIndex)+1) * 25}%`, background: currentLevelData.color}}></span></p>
-            <p>{currentLevelData.level}</p>
-          </div>
-          <ul className="level-desc">
-            {
-              currentLevelData.list.map((li, i) => 
-                <li key={i} style={{ color: currentLevelData.color }}>
-                  <span>{li.title}</span><span>{li.desc}</span>
-                </li>
-              )
-            }
-          </ul>
-        </div>
-      </React.Fragment>
-    )
-  }
-
-  getVideoUrl = () => {
-    http.get('/mstudent/common/getPublicByCode?code=ENGLISH_TV')
-    .then(res => {
-      const videoUrl = res.data.TV_URL
-      this.setState({ videoUrl })
-    })
-  }
-
   render() {
     const { courseList, videoUrl } = this.state
     return (
       <div className="long-english-container">
-        <Helmet title="龙英语" />
-        <div className="l-eng-cont">
-          <TitleComp title="龙英语的教学理念" />
-          <div className="l-eng-linian">
-            <p>高效学习，少走弯路</p>
-            <span>英美外教在线英语课 + 中教在线语法课</span>
-            <span>英语能力全面提高</span>
-            <div className="audioPlayer">
-              <img
-                src={defaultAudioImg}
-                onClick={this.getVideoUrl}
-                style={{ display: `${videoUrl ? 'none' : 'block'}` }}
-              />
-              <video
-                style={{ display: `${videoUrl ? 'inline-block' : 'none'}` }}
-                src={videoUrl}
-                controls
-                autoPlay
-              />
-            </div>
+        <div className="efficiency-learn-box">
+          <div className="e-l-t">
+            <div className="title">高效学习，少走弯路</div>
+            <div className="desc">专属英美外教在线英语课+专属中教在线语法课 英语能力全面提升</div>
           </div>
-          <TitleComp title="课程介绍" />
-          <div className="l-eng-desc">
-            {this.renderDesc()}
-            <div className="l-eng-arrange">
-              <p><span>课时安排</span><span className="through-line"></span></p>
-              {this.renderTable()}
+          <EfficiencyLearn/>
+        </div>
+        <div className="courseLevel-teachAim">
+          <div className="title">课程分级和教学目标</div>
+          <CourseLevelAndAim />
+        </div>
+        <div className="teachSys">
+          <div className="title">教学系统</div>
+          <div className="sys-box">
+
+            <div className="item">
+              <div className="img"><img src={sysTeach} alt=""/></div>
+              <div className="big">专属外教+专属中教</div>
+              <div className="small">流利口语与知识点兼得</div>
             </div>
+            <div className="item">
+              <div className="img"><img src={sysLearn} alt=""/></div>
+              <div className="big">教学内容丰富有趣</div>
+              <div className="small">经典绘本与经典动画结合</div>
+            </div>
+            <div className="item">
+              <div className="img"><img src={sysTest} alt=""/></div>
+              <div className="big">课后练习与每日挑战</div>
+              <div className="small">复习内容，巩固知识点</div>
+            </div>
+            <div className="item">
+              <div className="img"><img src={sysRetest} alt=""/></div>
+              <div className="big">阶段性总结复习</div>
+              <div className="small">温故知新，强化学习效果</div>
+            </div>
+
           </div>
-          <TitleComp title="教程分级与教学目标" />
-          <div className="l-eng-level">
-            {this.renderLevel()}
+        </div>
+        <div className="team-experts-box">
+          <div className="title">专家团队</div>
+          <TeamOfExperts2 />
+        </div>
+        <div className="free-course">
+          <div className="free-course-header">
+            <h1>免费试听课</h1>
+            <Link to="/index/free-course-list"><span className="more">更多</span></Link>
           </div>
-          <TitleComp title="教学系统" />
-          <div className="l-eng-system">
-            <div className="sys-item">
-              <p className="p1">教</p><span>语法、句型，知识点总结；短视频、“问与答” 帮助阅读</span>
-            </div>
-            <div className="sys-item">
-              <p className="p2">学</p><span>卡通电影、趣味故事，30分钟积极互动</span>
-            </div>
-            <div className="sys-item">
-              <p className="p3">练</p><span>每日课后英语挑战，来吧</span>
-            </div>
-            <div className="sys-item">
-              <p className="p4">习</p><span>课前5分钟复习、单元阶段性复习，更高效</span>
-            </div>
-          </div>
-          <TitleComp title="专家团队" />
-          <div className="l-eng-experts">
-            <TeamOfExperts />
-          </div>
-          <TitleComp title="免费试听课" />
-          <div className="l-eng-class">
+          <div className="free-course-content">
             {
-              courseList.map(course => 
+              courseList.map(course =>
                 <CourseItem
                   key={course.id}
                   title={course.name}
                   courseName={course.name}
                   status={course.subscribeStatus}
                   courseId={course.id}
-                  kind={course.abbreviation}//'english'
+                  kind={course.abbreviation}
                   content={course.courseDesc}
                   img={course.courseFile}
-                  // handleClick={course.subscribeStatus===1 ? this.handleClickCourseItem(course.id) : ''}
                 />
               )
             }
